@@ -1,0 +1,29 @@
+-
+  hosts: localhost
+  vars:
+    data: "Hello From TechoClouds Supper Family"
+
+  tasks:
+    - name: ping
+      ping:
+
+    - name: install vim
+      package:
+        state: present
+
+    - name: create a file
+      copy:
+        content: "{{ data }}"
+        dest: ~/TechoClouds-hello.txt
+      when: ansible_distribution_version == '20.04x'
+      notify: handlers_test
+    - name: 
+      shell: |
+        cat ~/TechoClouds-hello.txt
+      register: file_content
+      
+  handlers:
+    - name: handlers_test
+      debug:
+        msg: "{{ file_content.stdout }}"
+

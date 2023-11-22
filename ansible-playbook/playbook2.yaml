@@ -1,0 +1,10 @@
+-
+  hosts: localhost
+  gather_facts: False
+  tasks:
+    - name: ping
+      ping:
+    - name: install vim
+      package:
+        state: present
+

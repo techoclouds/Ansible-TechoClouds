@@ -1,0 +1,30 @@
+-
+  hosts: localhost
+  gather_facts: False
+  vars:
+    data: "Hello From TechoClouds Family"
+
+  tasks:
+    - name: ping
+      ping:
+
+    - name: install vim
+      package:
+        state: present
+
+    - name: create a file
+      copy:
+        content: "{{ data }}"
+        dest: ~/TechoClouds-hello.txt
+    - name: cat file
+
+      shell: |
+        cat ~/TechoClouds-hello.txt
+      changed_when: false
+      register: file_content
+
+
+    - name: "Print the file content to a console"
+      debug:
+         msg: "{{ file_content.stdout }}"
+

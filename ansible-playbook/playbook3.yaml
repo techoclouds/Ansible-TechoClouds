@@ -1,0 +1,15 @@
+-
+  hosts: localhost
+  gather_facts: False
+  tasks:
+    - name: ping
+      ping:
+
+    - name: install vim
+      package:
+        state: present
+
+    - name: create a file
+      copy:
+        content: Hello From TechoClouds
+        dest: ~/TechoClouds-hello.txt

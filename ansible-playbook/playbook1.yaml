@@ -1,0 +1,9 @@
+-
+  hosts: localhost
+  tasks:
+    - name: ping
+      ping:
+    - name: install vim
+      package:
+        state: present
+

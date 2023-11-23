@@ -62,13 +62,13 @@ This section focuses on a list variable named datalist, containing multiple elem
   gather_facts: False
 
   vars:
-    # Defining an inline list variable
+    # Defining a list variable
     datalist:
       - element1
       - element2
       - element3
       - element4
-      vars:
+    # Defining an inline list variable
     #datalist2:
     #  [ item1, item2, item3, item4 ]
 

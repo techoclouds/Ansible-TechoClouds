@@ -94,21 +94,25 @@ The vars_prompt section prompts the user for input variables that will be used i
 ```
 ---
 
+---
 
-hosts: localhost
-gather_facts: False
+- hosts: localhost
+  gather_facts: False
 
-# User Input: Prompts the user for input
-vars_prompt:
-  - name: target_user
-    private: False
-    prompt: "Enter the username for the target system:"
+  # User Input: Prompts the user for input
+  vars_prompt:
+    - name: target_user
+      private: False
+      prompt: "Enter the username for the target system:"
 
-# Execution Tasks
-tasks:
-  - name: Display User Input
-    debug:
-      msg: "{{ target_user }}"
+  # Execution Tasks
+  tasks:
+    - name: Display User Input
+      debug:
+        msg: "{{ target_user }}"
+
+
+...
 
 
 ...

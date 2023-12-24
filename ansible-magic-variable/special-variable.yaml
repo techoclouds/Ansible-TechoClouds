@@ -1,0 +1,16 @@
+---
+# ansible magic variable example
+- name: Print Hostname and IP Address
+  hosts: all
+  gather_facts: true
+  tasks:
+      #ansible Magic variable example
+    - name: Display ansible internal (Magic) variables #gather_facts is no requred for these
+      # ansible fact variable example
+      debug:
+        msg: "Playbook Dir: {{ playbook_dir }}, Ansible Check Mode {{ ansible_check_mode }}"
+    
+      # ansible Fact variable example
+    - name: Display Hostname and IP #need gather_facts to be true for this
+      debug:
+        msg: "Hostname: {{ ansible_hostname }}, IP Address: {{ ansible_default_ipv4.address }}"

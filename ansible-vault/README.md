@@ -37,6 +37,8 @@ playbook.yaml
       debug:
         var: password
 ```
+[![asciicast](https://asciinema.org/a/628772.svg)](https://asciinema.org/a/628772)
+
 
 #### Decrypt Sensitive Data:
 Decrypt Encrypted Data
@@ -45,6 +47,8 @@ To decrypt encrypted data using Ansible Vault:
 ansible-vault decrypt password.yaml
 ```
 This command decrypts the password.yaml file, making its contents readable. You'll be prompted to enter the vault password used during encryption.
+
+
 
 ## Additional Information
 

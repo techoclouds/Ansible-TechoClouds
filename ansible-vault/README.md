@@ -38,6 +38,14 @@ playbook.yaml
         var: password
 ```
 
+#### Decrypt Sensitive Data:
+Decrypt Encrypted Data
+To decrypt encrypted data using Ansible Vault:
+```
+ansible-vault decrypt password.yaml
+```
+This command decrypts the password.yaml file, making its contents readable. You'll be prompted to enter the vault password used during encryption.
+
 ## Additional Information
 
 Vault Best Practices:

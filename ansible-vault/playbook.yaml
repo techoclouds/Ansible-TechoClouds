@@ -1,0 +1,12 @@
+---
+- name: Playbook using Vault
+  hosts: all
+  tasks:
+    - name: Include Vaulted Variables
+      include_vars:
+        file: password.yaml
+
+    - name: Print Password
+      debug:
+        var: password  # Use the variable defined above to access the password
+

@@ -1,4 +1,4 @@
-# Ansible Special Variables: Magic and Facts Tutorial by DevOps TechPark
+# Ansible Special Variables: Magic and Facts Tutorial by TechoClouds
 
 ## Overview
 

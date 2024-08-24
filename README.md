@@ -1,2 +1,2 @@
-# Ansible-TehoClouds
+# Ansible-TechoClouds
 Ansible tutorial study metrical 

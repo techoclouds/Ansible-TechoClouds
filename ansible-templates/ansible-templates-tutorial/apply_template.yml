@@ -1,0 +1,9 @@
+- hosts: default
+  vars:
+    server_name: localhost
+    listen_port: 8080
+  tasks:
+    - name: Apply Nginx template
+      template:
+        src: templates/my_template.j2
+        dest: /tmp/nginx.conf

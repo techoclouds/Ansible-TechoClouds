@@ -87,22 +87,8 @@
 #### Step 7: Write Documentation in `README.md`
 - Document the role's purpose, variables, and usage in `README.md`.
 
-### 3.3 Testing the Role
-#### Step 8: Create a Simple Test Playbook
-- Create a `tests/test.yml` playbook to test the role.
-  ```yaml
-  ---
-  - hosts: localhost
-    become: yes
-    roles:
-      - apache_role
-  ```
 
-#### Step 9: Run the Test Playbook
-- Execute the playbook to verify the role works as expected.
-  ```bash
-  ansible-playbook tests/test.yml
-  ```
+
 
 ## Chapter 4: Using Variables in Roles
 

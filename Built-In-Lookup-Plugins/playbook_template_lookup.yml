@@ -1,0 +1,7 @@
+
+---
+- hosts: localhost
+  tasks:
+    - name: Render a template using the template lookup plugin
+      debug:
+        msg: "{{ lookup('template', 'templates/sample_template.j2') }}"

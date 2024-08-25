@@ -1,0 +1,7 @@
+
+---
+- hosts: localhost
+  tasks:
+    - name: Execute a shell command using the pipe lookup plugin
+      debug:
+        msg: "{{ lookup('pipe', 'date') }}"

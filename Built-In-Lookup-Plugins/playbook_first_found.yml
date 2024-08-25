@@ -1,0 +1,7 @@
+---
+- hosts: localhost
+  tasks:
+    - name: Use the first_found lookup plugin to read the first available file
+      debug:
+        msg: "{{ lookup('ansible.builtin.first_found', files=['files/file3.txt', 'files/file2.txt', 'files/file1.txt']) }}"
+

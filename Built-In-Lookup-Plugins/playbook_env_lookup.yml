@@ -1,0 +1,7 @@
+
+---
+- hosts: localhost
+  tasks:
+    - name: Retrieve an environment variable using the env lookup plugin
+      debug:
+        msg: "{{ lookup('env', 'MY_VAR') }}"

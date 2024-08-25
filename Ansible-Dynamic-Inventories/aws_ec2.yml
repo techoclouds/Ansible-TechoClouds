@@ -1,0 +1,10 @@
+plugin: amazon.aws.ec2
+regions:
+  - us-west-2
+filters:
+  tag:Name: my-ansible-instance
+keyed_groups:
+  - key: tags.Name
+    prefix: tag
+hostnames:
+  - tag:Name

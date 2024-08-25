@@ -1,0 +1,6 @@
+---
+- hosts: tag_my-ansible-instance
+  tasks:
+    - name: Display EC2 Instance Details
+      debug:
+        var: ansible_facts

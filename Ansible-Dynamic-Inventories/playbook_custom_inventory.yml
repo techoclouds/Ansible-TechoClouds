@@ -1,0 +1,6 @@
+---
+- hosts: all
+  tasks:
+    - name: Display Custom Inventory Hosts
+      debug:
+        msg: "Host {{ inventory_hostname }} is part of the inventory."

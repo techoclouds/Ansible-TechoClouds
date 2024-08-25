@@ -1,0 +1,32 @@
+
+---
+- hosts: localhost
+  tasks:
+    - block:
+        - name: Deploy a sample application
+          command: echo "Deploying application..."
+          register: deploy_output
+
+        - name: Show deployment output
+          debug:
+            var: deploy_output.stdout
+
+        - name: Simulate failure during deployment
+          command: /bin/false
+      rescue:
+        - name: Rollback deployment
+          command: echo "Rolling back deployment..."
+          register: rollback_output
+
+        - name: Show rollback output
+          debug:
+            var: rollback_output.stdout
+
+      always:
+        - name: Clean up temporary files
+          command: echo "Cleaning up..."
+          register: cleanup_output
+
+        - name: Show cleanup output
+          debug:
+            var: cleanup_output.stdout

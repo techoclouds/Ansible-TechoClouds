@@ -1,0 +1,32 @@
+
+---
+- hosts: localhost
+  tasks:
+    - block:
+        - name: Simulate a successful task
+          command: echo "This will succeed"
+          register: success_output
+
+        - name: Show success output
+          debug:
+            var: success_output.stdout
+
+        - name: Simulate a failing task
+          command: /bin/false
+      rescue:
+        - name: Handle the failure
+          command: echo "This is the rescue block"
+          register: rescue_output
+
+        - name: Show rescue output
+          debug:
+            var: rescue_output.stdout
+
+      always:
+        - name: Always run this task
+          command: echo "This will run regardless"
+          register: always_output
+
+        - name: Show always output
+          debug:
+            var: always_output.stdout

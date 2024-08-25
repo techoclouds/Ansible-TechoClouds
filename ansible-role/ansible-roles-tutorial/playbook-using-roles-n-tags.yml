@@ -1,0 +1,11 @@
+# site_roles.yml
+---
+- hosts: all
+  become: yes
+
+  roles:
+    - role: webserver-role-with-tags
+      tags: web
+
+    - role: dbserver-role-with-tags
+      tags: database

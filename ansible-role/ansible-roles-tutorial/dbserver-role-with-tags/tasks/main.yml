@@ -1,0 +1,28 @@
+---
+# tasks file for dbserver
+- name: Install MySQL
+  apt:
+    name: mysql-server
+    state: present
+    update_cache: yes
+  tags:
+    - database
+    - install
+
+- name: Configure MySQL
+  copy:
+    src: my.cnf
+    dest: /etc/mysql/my.cnf
+  notify:
+    - Restart MySQL
+  tags:
+    - database
+    - configure
+
+- name: Start MySQL service
+  service:
+    name: mysql
+    state: started
+  tags:
+    - database
+    - start

@@ -1,0 +1,29 @@
+# webserver/tasks/main.yml
+---
+- name: Install Apache
+  apt:
+    name: apache2
+    state: present
+    update_cache: yes
+  tags:
+    - web
+    - install
+
+- name: Configure Apache
+  template:
+    src: apache.conf.j2
+    dest: /etc/apache2/sites-available/000-default.conf
+  notify:
+    - Restart Apache
+  tags:
+    - web
+    - configure
+
+- name: Start Apache service
+  service:
+    name: apache2
+    state: started
+  tags:
+    - web
+    - start---
+# tasks file for role-with-tags

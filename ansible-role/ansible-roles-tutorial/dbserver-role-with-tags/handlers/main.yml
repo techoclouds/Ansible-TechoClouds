@@ -1,0 +1,9 @@
+---
+# handlers file for dbserver
+- name: Restart MySQL
+  service:
+    name: mysql
+    state: restarted
+  tags:
+    - database
+    - restart

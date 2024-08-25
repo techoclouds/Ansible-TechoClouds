@@ -1,0 +1,5 @@
+- name: Gather facts about remote hosts
+      hosts: all
+      tasks:
+        - name: Gather all facts
+          setup:

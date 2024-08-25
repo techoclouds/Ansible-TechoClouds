@@ -1,0 +1,10 @@
+- name: Schedule a cron job
+      hosts: all
+      tasks:
+        - name: Schedule a daily backup
+          cron:
+            name: "Daily database backup"
+            minute: "0"
+            hour: "2"
+            job: "/usr/local/bin/backup.sh"
+            user: root

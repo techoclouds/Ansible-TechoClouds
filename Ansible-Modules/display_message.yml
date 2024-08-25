@@ -1,0 +1,6 @@
+- name: Display a debug message
+      hosts: all
+      tasks:
+        - name: Display a simple message
+          debug:
+            msg: "Deployment completed successfully!"

@@ -1,0 +1,5 @@
+- name: Run a shell command
+      hosts: all
+      tasks:
+        - name: Run shell command with pipeline
+          shell: cat /var/log/syslog | grep ERROR

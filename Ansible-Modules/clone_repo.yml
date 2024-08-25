@@ -1,0 +1,9 @@
+- name: Clone a Git repository
+      hosts: all
+      tasks:
+        - name: Clone latest code from GitHub
+          git:
+            repo: 'https://github.com/example/myapp.git'
+            dest: /var/www/myapp
+            version: master
+            update: yes

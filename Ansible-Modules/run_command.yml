@@ -1,0 +1,5 @@
+- name: Run a command on the remote host
+  hosts: all
+  tasks:
+    - name: Run whoami command
+      command: whoami

@@ -1,0 +1,10 @@
+- name: Deploy Nginx configuration
+  hosts: all
+  vars:
+    server_name: example.com
+  tasks:
+    - name: Deploy Nginx configuration from template
+      template:
+        src: templates/nginx.conf.j2
+        dest: /etc/nginx/sites-available/{{ server_name }}
+        mode: '0644'

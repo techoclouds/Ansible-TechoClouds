@@ -1,0 +1,8 @@
+- name: Manage Nginx service
+      hosts: all
+      tasks:
+        - name: Start and enable Nginx
+          service:
+            name: nginx
+            state: started
+            enabled: yes

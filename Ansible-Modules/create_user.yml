@@ -1,0 +1,8 @@
+- name: Create a new user
+  hosts: all
+  tasks:
+    - name: Ensure user john is present
+      user:
+        name: john
+        state: present
+        groups: sudo

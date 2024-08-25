@@ -1,0 +1,8 @@
+- name: Copy configuration file
+  hosts: all
+  tasks:
+    - name: Copy config file to remote hosts
+      copy:
+        src: ansible.cfg
+        dest: config.cfg-backup
+        mode: '0644'
